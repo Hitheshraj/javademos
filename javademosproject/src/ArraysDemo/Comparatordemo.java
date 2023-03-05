@@ -17,19 +17,7 @@ public class Comparatordemo{
 		}
 	}
 }
-/*class empcom implements Comparable<Employee>{
-	public int compareTo(Employee e1,Employee e2) {
-		// TODO Auto-generated method stub
-		return 
-}
-
-	@Override
-	public int compareTo(Employee o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	
-}*/
+//This Comparable method overrides the Collection.sort to required comparison
 class Employee implements Comparable<Employee> {
 	int id;
 	String name;
@@ -48,11 +36,16 @@ class Employee implements Comparable<Employee> {
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", aadhar=" + aadhar + "]";
 	}
-
-	@Override
+//This is with respect to id
+	/*@Override
 	public int compareTo(Employee o) {
 		// TODO Auto-generated method stub
 		return this.id-(o.id);
+	}*/
+	@Override
+	public int compareTo(Employee o) {
+		// TODO Auto-generated method stub
+		return this.name.compareTo(o.name);
 	}
 	
 }
